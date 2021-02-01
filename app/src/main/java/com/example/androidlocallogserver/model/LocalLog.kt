@@ -1,4 +1,4 @@
-package com.example.androidlocallog.model
+package com.example.androidlocallogserver.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

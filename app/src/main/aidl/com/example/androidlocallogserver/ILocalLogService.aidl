@@ -1,6 +1,6 @@
-package com.example.androidlocallog;
+package com.example.androidlocallogserver;
 
-import com.example.androidlocallog.model.LocalLog;
+import com.example.androidlocallogserver.model.LocalLog;
 
 interface ILocalLogService {
 

@@ -9,8 +9,8 @@ import android.os.IBinder
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.androidlocallog.ILocalLogService
-import com.example.androidlocallog.model.LocalLog
+import com.example.androidlocallogserver.ILocalLogService
+import com.example.androidlocallogserver.model.LocalLog
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             override fun onServiceConnected(className: ComponentName, service: IBinder) {
                 // Following the example above for an AIDL interface,
                 // this gets an instance of the IRemoteInterface, which we can use to call on the service
+                Log.e(TAG, "Service connected")
                 iRemoteService = ILocalLogService.Stub.asInterface(service)
             }
 
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun bindService(mConnection: ServiceConnection) {
         val intent = Intent("service.name")
-        intent.setPackage("com.example.androidaidlserver")
+        intent.setPackage("com.example.androidlocallogserver")
         bindService(intent, mConnection, Context.BIND_AUTO_CREATE)
     }
 
